@@ -28,6 +28,10 @@ app.use(
 	})
 );
 
+app.get("/", function (req, res) {
+	res.send("works");
+});
+
 // * Todo routes
 app.use("/todo", require("./routes/todo"));
 
