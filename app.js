@@ -29,10 +29,10 @@ app.use(
 );
 
 // * Todo routes
-app.use("todo", require("./routes/todo"));
+app.use("/todo", require("./routes/todo"));
 
 // * Authenticate Client
-app.use("auth", require("./routes/auth"));
+app.use("/auth", require("./routes/auth"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
