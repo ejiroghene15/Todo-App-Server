@@ -2,8 +2,7 @@
 const mongoose = require("mongoose");
 mongoose.set({ strictQuery: true });
 // Set up default mongoose connection
-const mongoDB =
-	"mongodb+srv://jiroghene:BgALYLTDHBOsGBsP@cluster0.m161ftw.mongodb.net/todoApp";
+const mongoDB = process.env.MONGODB_URI;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Get the default connection
