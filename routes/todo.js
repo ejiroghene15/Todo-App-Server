@@ -7,7 +7,7 @@ const verifyAuth = require("../middleware/validate");
 // * Get all Todo Items
 router.get("/", verifyAuth, async function (req, res) {
 	let result = await todo.find({ user: req.user });
-	res.json({ data: parseItems(result) });
+	res.json(result);
 });
 
 // * Get all Todo Items
@@ -27,7 +27,7 @@ router.post("/new", verifyAuth, function (req, res) {
 			res.status(400).send("Could not create todo");
 		}
 		let result = await todo.find();
-		res.json({ data: parseItems(result) });
+		res.json(result);
 	});
 });
 
@@ -59,21 +59,5 @@ router.delete("/delete/:id", verifyAuth, function (req, res) {
 		res.send("item deleted");
 	});
 });
-
-function parseItems(result) {
-	let data = [];
-	result.forEach((val, key) => {
-		let status = val.status
-			? "<button class='btn btn-xs btn-success'>Completed</button>"
-			: "<button class='btn btn-xs btn-warning'>Pending</button>";
-		data.push({
-			activity: val.activity,
-			status,
-			action: `<a class='btn btn-xs btn-info' href='/todo/${val._id}'>View Todo</a>`,
-			original_status: val.status,
-		});
-	});
-	return data;
-}
 
 module.exports = router;
