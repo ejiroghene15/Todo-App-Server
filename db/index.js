@@ -1,6 +1,7 @@
 // Import the mongoose module
 const mongoose = require("mongoose");
 mongoose.set({ strictQuery: true });
+
 // Set up default mongoose connection
 const mongoDB = process.env.MONGODB_URI;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });

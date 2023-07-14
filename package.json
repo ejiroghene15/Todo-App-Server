@@ -22,7 +22,9 @@
     "serverless-http": "^3.2.0"
   },
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.3.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ejiroghene15/Todo-App-Server.git"

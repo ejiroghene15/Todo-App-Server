@@ -1,0 +1,15 @@
+# fly.toml app configuration file generated for taxaide-node-server on 2023-07-14T16:25:17+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "taxaide-node-server"
+primary_region = "ams"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
