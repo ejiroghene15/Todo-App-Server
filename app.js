@@ -5,9 +5,8 @@ let { engine } = require("express-handlebars");
 const morgan = require("morgan");
 const cors = require("cors");
 
-
 if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
+	require("dotenv").config();
 }
 
 const app = express();
@@ -33,7 +32,7 @@ app.use(
 );
 
 app.get("/", function (req, res) {
-	res.send("works");
+	res.send("Howdy Mate!! Nothing to see here");
 });
 
 // * Todo routes
